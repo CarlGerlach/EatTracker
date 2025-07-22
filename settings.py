@@ -15,7 +15,7 @@ class ingredients(base):
     __tablename__ = 'ingredients'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String)
+    name = Column(String(50))
     energy = Column(Integer)
     carbs = Column(Integer)
     sugars = Column(Integer)

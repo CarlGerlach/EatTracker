@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session, declarative_base
 from sqlalchemy import create_engine, Column, Integer, String
+from pydantic import BaseModel
 
 
 base = declarative_base() # creates a base class for a database model
@@ -11,8 +12,8 @@ session = Session(engine) #connection to database
 
 #Classes
 
-class ingredients(base):
-    __tablename__ = 'ingredients'
+class ingredient(base):
+    __tablename__ = 'ingredient'
 
     id = Column(Integer, primary_key=True)
     name = Column(String(50))
@@ -21,6 +22,14 @@ class ingredients(base):
     sugars = Column(Integer)
     protein = Column(Integer)
 
+
+class ingredient_dto(BaseModel):
+    id: int
+    name: str
+    energy: int
+    carbs: int
+    sugars: int
+    protein: int
 
 
 

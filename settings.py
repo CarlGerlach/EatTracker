@@ -17,19 +17,24 @@ class ingredient(base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(50))
-    energy = Column(Integer)
+    calories = Column(Integer)
     carbs = Column(Integer)
     sugars = Column(Integer)
     protein = Column(Integer)
 
 
 class ingredient_dto(BaseModel):
-    id: int
     name: str
-    energy: int
+    calories: int
     carbs: int
     sugars: int
     protein: int
+
+class ingredient_id_dto(BaseModel):
+    id: int
+
+
+
 
 
 
